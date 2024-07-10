@@ -7,5 +7,4 @@ then
 echo "Please run with super user"
 else
 echo "you are super user"
-
-
+fi
