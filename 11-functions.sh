@@ -22,7 +22,7 @@ else
 fi
 
 dnf install mysql -y 
-VALIDATE $? Installation of Mysql
+VALIDATE $? "Installation of Mysql"
 
 dnf install tree -y
-VALIDATE $? Installation of Tree
+VALIDATE $? "Installation of Tree"
