@@ -11,18 +11,20 @@ else
 fi
 
 dnf install mysql -y 
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
-    echo "Installation of mysql.... failure"
+    echo "Installation of mysql....failure"
     exit 1
+    
 else 
-    echo "Installation of mysql.... sucess"
+    echo "Installation of mysql....sucess"
 fi
 
 dnf install tree -y
 if [ $? -ne 0 ]
 then
-    echo "Installation of tree.... failure"
+    echo "Installation of tree....failure"
+    exit 1
 else
-    echo "Installation of tree... sucess"
+    echo "Installation of tree...sucess"
 fi
