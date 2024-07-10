@@ -21,7 +21,7 @@ else
     echo "you are super user"
 fi
 
-dnf install mysqll -y 
+dnf install mysql -y 
 VALIDATE $? Installation of Mysql
 
 dnf install tree -y
