@@ -33,3 +33,6 @@ VALIDATE $? "Installation of Mysql"
 
 dnf install tree -y &>>$LOGFILE
 VALIDATE $? "Installation of Tree"
+
+dnf install dockerr -y &>>$LOGFILE
+VALIDATE $? "Installation of docker"
