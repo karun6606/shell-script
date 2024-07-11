@@ -21,6 +21,8 @@ fi
 for i in $@ 
 do
     echo $i
+    dnf install $i -y &>>$LOGFILE
+    VALIDATE $? "Installation of $i"
 done
 
 VALIDATE() {
@@ -34,15 +36,7 @@ VALIDATE() {
     fi
 }
 
-dnf install $i -y &>>$LOGFILE
-VALIDATE $? "Installation of $i"
 
-# dnf install $i -y &>>$LOGFILE
-# VALIDATE $? "Installation of $i"
 
-# dnf install $i -y &>>$LOGFILE
-# VALIDATE $? "Installation of $i"
 
-# dnf install $i -y &>>$LOGFILE
-# VALIDATE $? "Installation of $i"
 
