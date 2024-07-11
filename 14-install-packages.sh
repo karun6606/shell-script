@@ -27,6 +27,7 @@ do
         VALIDATE $? "Installation of $i"
     else
         echo -e "$2 Already installed....$Y Skipping $N"
+    fi
 done
 
 VALIDATE() {
