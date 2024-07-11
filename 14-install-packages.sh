@@ -5,6 +5,11 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | awk -F "." '{print $1F}')
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 if [ $userid -ne 0 ]
 then    
     echo "Run with super user"
@@ -13,25 +18,30 @@ else
     echo "You are super user"
 fi
 
+for i in $@ 
+do
+    echo $i
+done
+
 VALIDATE() {
+
     if [ $1 -ne 0 ]
     then
-        echo "$2....Failure"
+        echo -e "$2.... $R Failure $N"
         exit 1
-    
-    else
-        echo "$2....Sucess"
+        else
+        echo -e "$2.... $G Sucess $N"
     fi
 }
 
-dnf install mysql1 -y &>>$LOGFILE
-VALIDATE $? "Installaton of mysql"
+dnf install $i -y &>>$LOGFILE
+VALIDATE $? "$i"
 
-dnf install tree -y &>>$LOGFILE
-VALIDATE $? "Installaton of tree"
+dnf install $i -y &>>$LOGFILE
+VALIDATE $? "$i"
 
-dnf install chrony -y &>>$LOGFILE
-VALIDATE $? "Installaton of chrony"
+dnf install $i -y &>>$LOGFILE
+VALIDATE $? "$i"
 
 dnf install gcc -y &>>$LOGFILE
 VALIDATE $? "Installaton of gcc"
