@@ -35,14 +35,14 @@ VALIDATE() {
 }
 
 dnf install $i -y &>>$LOGFILE
-VALIDATE $? "$i"
+VALIDATE $? "Installation of $i"
 
 dnf install $i -y &>>$LOGFILE
-VALIDATE $? "$i"
+VALIDATE $? "Installation of $i"
 
 dnf install $i -y &>>$LOGFILE
-VALIDATE $? "$i"
+VALIDATE $? "Installation of $i"
 
 dnf install gcc -y &>>$LOGFILE
-VALIDATE $? "Installaton of gcc"
+VALIDATE $? "Installation of $i"
 
