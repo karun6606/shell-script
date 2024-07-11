@@ -14,7 +14,7 @@ else
 fi
 
 VALIDATE () {
-if [ if $1 - ne 0 ]
+if [ if $1 -ne 0 ]
 then
     echo "$2....Failure"
 else
@@ -33,5 +33,5 @@ dnf install chrony -y &>>$LOGFILE
 VALIDATE $? "Installaton of chrony"
 
 dnf install gcc -y &>>$LOGFILE
-VALIDATE $? "Installaton of gcc
+VALIDATE $? "Installaton of gcc"
 
