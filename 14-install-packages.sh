@@ -3,7 +3,7 @@
 userid=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | awk -F "." '{print F1}')
-LOGFILE=$SCRIPT_NAME-$TIMESTAMP.log
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 if [ $userid -ne 0 ]
 then    
@@ -13,17 +13,18 @@ else
     echo "You are super user"
 fi
 
-VALIDATE () {
+VALIDATE(){
 if [ if $1 -ne 0 ]
 then
     echo "$2....Failure"
+    
 else
     echo "$2....Sucess"
 fi
 }
 
 
-dnf install mysql -y &>>$LOGFILE
+dnf install mysql1 -y &>>$LOGFILE
 VALIDATE $? "Installaton of mysql"
 
 dnf install tree -y &>>$LOGFILE
