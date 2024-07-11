@@ -37,12 +37,12 @@ VALIDATE() {
 dnf install $i -y &>>$LOGFILE
 VALIDATE $? "Installation of $i"
 
-dnf install $i -y &>>$LOGFILE
-VALIDATE $? "Installation of $i"
+# dnf install $i -y &>>$LOGFILE
+# VALIDATE $? "Installation of $i"
 
-dnf install $i -y &>>$LOGFILE
-VALIDATE $? "Installation of $i"
+# dnf install $i -y &>>$LOGFILE
+# VALIDATE $? "Installation of $i"
 
-dnf install $i -y &>>$LOGFILE
-VALIDATE $? "Installation of $i"
+# dnf install $i -y &>>$LOGFILE
+# VALIDATE $? "Installation of $i"
 
