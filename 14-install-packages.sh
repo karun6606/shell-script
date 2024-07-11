@@ -20,9 +20,13 @@ fi
 
 for i in $@ 
 do
-     
-    dnf install $i -y &>>$LOGFILE
-    VALIDATE $? "Installation of $i"
+    echo pakage to install:$i
+    if [ $1 -ne 0 ]
+    then
+        dnf install $i -y &>>$LOGFILE
+        VALIDATE $? "Installation of $i"
+    else
+        echo -e "$2 Already installed....$Y Skipping $N"
 done
 
 VALIDATE() {
