@@ -43,6 +43,6 @@ VALIDATE $? "Installation of $i"
 dnf install $i -y &>>$LOGFILE
 VALIDATE $? "Installation of $i"
 
-dnf install gcc -y &>>$LOGFILE
+dnf install $i -y &>>$LOGFILE
 VALIDATE $? "Installation of $i"
 
