@@ -2,7 +2,7 @@
 
 userid=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$(echo $0 | awk -F "." '{print F1}')
+SCRIPT_NAME=$(echo $0 | awk -F "." '{print $1F}')
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 if [ $userid -ne 0 ]
@@ -14,13 +14,14 @@ else
 fi
 
 VALIDATE(){
-if [ if $1 -ne 0 ]
-then
-    echo "$2....Failure"
+    if [ if $1 -ne 0 ]
+    then
+        echo "$2....Failure"
     
-else
-    echo "$2....Sucess"
-fi
+    else
+        echo "$2....Sucess"
+    fi
+
 }
 
 
