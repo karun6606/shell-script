@@ -2,5 +2,5 @@
 
 course=AWS
 
-echo "Calling other script:$Course"
+echo "Calling other script:$course"
 echo "PID of other script:$$"
