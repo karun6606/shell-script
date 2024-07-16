@@ -28,7 +28,7 @@ else
 fi
 }
 
-dnf install mysql1 -y
+dnf install mysql -y 
 #VALIDATE $? "Installed mysql"
 
 dnf install tree -y
