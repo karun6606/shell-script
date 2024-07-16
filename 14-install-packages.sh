@@ -21,12 +21,15 @@ fi
 for i in $@ 
 do
     echo pakage to install:$i
-    if [ $1 -ne 0 ]
+    dnf list installed  $i &>>$LOGFILE
+    if [ $? -eq 0 ]
     then
-        dnf install $i -y &>>$LOGFILE
-        VALIDATE $? "Installation of $i"
+        echo -e "$i Already installed....$Y Skipping $N"
+       
     else
-        echo -e "$2 Already installed....$Y Skipping $N"
+         dnf install $i -y &>>$LOGFILE
+        VALIDATE $? "Installation of $i"
+        
     fi
 done
 
