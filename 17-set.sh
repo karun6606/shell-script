@@ -38,6 +38,6 @@ fi
 
 dnf install mysql -y &>>$LOGFILE
 
-dnf install tree1 -y &>>$LOGFILE
+dnf install tree -y &>>$LOGFILE
 
 
