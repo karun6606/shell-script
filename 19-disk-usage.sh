@@ -11,7 +11,7 @@
     FOLDER=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $DISK_THRESOLD ]
     then
-        MESSAGE = "$FOLDER is more than $DISK_THRESOLD current usage:$USAGE"
+        MESSAGE="$FOLDER is more than $DISK_THRESOLD current usage:$USAGE"
     fi
  done <<< $DISK_USAGE
 
