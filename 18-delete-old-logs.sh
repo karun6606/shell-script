@@ -15,4 +15,4 @@ FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "$FILES"
 
-rm -rf /tmp/app-logs "$FILES"
+r
