@@ -11,7 +11,7 @@
     if [ $USAGE -ge $DISK_THRESOLD ]
     then
         echo "$FOLDER is more than $DISK_THRESOLD current usage:$USAGE"
-
+    fi
  done <<< $DISK_USAGE
 
 
