@@ -10,6 +10,6 @@ else
     mkdir /tmp/app-logs
 fi
 
-FILES=$(find $SOURCE_DIRECTORY *.log)
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "$FILES"
