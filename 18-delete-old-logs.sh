@@ -10,3 +10,6 @@ else
     mkdir /tmp/app-logs
 fi
 
+FILES=$(find $SOURCE_DIRECTORY *.log)
+
+echo "$FILES"
