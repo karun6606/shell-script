@@ -2,11 +2,11 @@
 
 SOURCE_DIRECTORY=/tmp/app-logs
 
-if [ $? -eq 0 ]
+
+if [-d $SOURCE_DIRECTORY]
 then
     echo "Source directory exits"
 else
     mkdir /tmp/app-logs
 fi
 
-find 
